@@ -1,0 +1,55 @@
+unit Caixa.DTO;
+
+interface
+
+uses SimpleAttributes;
+
+type
+  TCAIXAS = class
+  private
+    FClosedIn: TDateTime;
+    FOpenedIn: TDateTime;
+    FId: Integer;
+    procedure SetClosedIn(const Value: TDateTime);
+    procedure SetId(const Value: Integer);
+    procedure SetOpenedIn(const Value: TDateTime);
+  public
+    constructor Create;
+    destructor Destroy; override;
+  published
+    property Id: Integer read FId write SetId;
+    property OpenedIn: TDateTime read FOpenedIn write SetOpenedIn;
+    property ClosedIn: TDateTime read FClosedIn write SetClosedIn;
+  end;
+
+implementation
+
+{ TCAIXAS }
+
+constructor TCAIXAS.Create;
+begin
+
+end;
+
+destructor TCAIXAS.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TCAIXAS.SetClosedIn(const Value: TDateTime);
+begin
+  FClosedIn := Value;
+end;
+
+procedure TCAIXAS.SetId(const Value: Integer);
+begin
+  FId := Value;
+end;
+
+procedure TCAIXAS.SetOpenedIn(const Value: TDateTime);
+begin
+  FOpenedIn := Value;
+end;
+
+end.

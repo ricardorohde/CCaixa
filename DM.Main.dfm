@@ -6,7 +6,7 @@ object DTM: TDTM
   Width = 407
   object Conn: TFDConnection
     Params.Strings = (
-      'Database=C:\Projects\Delphi\CCaixa\DB\DADOS.db'
+      'Database=C:\Users\alex\Documents\CCaixa\DB\DADOS.db'
       'DriverID=SQLite')
     LoginPrompt = False
     Left = 128

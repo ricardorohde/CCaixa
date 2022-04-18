@@ -4,7 +4,7 @@ interface
 
 uses
   System.Rtti,
-  Model.Entidade.interfaces;
+  Model.Entidade.interfaces, System.Generics.Collections;
 
 type
   TGenericDAO<T: class, constructor> = class(TInterfacedObject,
@@ -16,13 +16,11 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: iModelEntidade<T>;
-    function Insert: iModelEntidade<T>;
-    function Update: iModelEntidade<T>;
-    function Delete: iModelEntidade<T>;
-    function Get: iModelEntidade<T>;
-    procedure List(Sender: TObject);
+    procedure Insert;
+    procedure Update;
+    procedure Delete;
     function This: T;
-    function Display: String;
+    function List: TList<T>;
   end;
 
 implementation
@@ -34,7 +32,7 @@ begin
   FEntidade := T.Create;
 end;
 
-function TGenericDAO<T>.Delete: iModelEntidade<T>;
+procedure TGenericDAO<T>.Delete;
 begin
   //
 end;
@@ -47,38 +45,12 @@ begin
   inherited;
 end;
 
-function TGenericDAO<T>.Display: String;
-begin
-  Result := FString;
-end;
-
-function TGenericDAO<T>.Get: iModelEntidade<T>;
+procedure TGenericDAO<T>.Insert;
 begin
   //
 end;
 
-function TGenericDAO<T>.Insert: iModelEntidade<T>;
-var
-  vContext: TRttiContext;
-  vType: TRttiType;
-  vProperty: TRttiProperty;
-  vRes: String;
-begin
-  vContext := TRttiContext.Create;
-  try
-    vType := vContext.GetType(FEntidade.classInfo);
-
-    for vProperty in vType.GetProperties do
-    begin
-      FString := FString + ' ' + vProperty.Name;
-    end;
-
-  finally
-    vContext.free;
-  end;
-end;
-
-procedure TGenericDAO<T>.List(Sender: TObject);
+function TGenericDAO<T>.List: TList<T>;
 begin
   //
 end;
@@ -93,7 +65,7 @@ begin
   Result := FEntidade;
 end;
 
-function TGenericDAO<T>.Update: iModelEntidade<T>;
+procedure TGenericDAO<T>.Update;
 begin
   //
 end;

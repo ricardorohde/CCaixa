@@ -53,9 +53,11 @@ end;
 procedure TFrmMain.OpenCaixa;
 begin
   pCaixa.This.OpenedIn := TDateTime(Now);
-  pCaixa.This.Total := 200;
-  pCaixa.Insert;
-  Memo1.Lines.Add(pCaixa.Display);
+  pCaixa.This.ClosedIn := IncHour(pCaixa.This.OpenedIn, 8);
+  pCaixa.This.Total := 1500.75;
+  Memo1.Lines.Add('Aberto em ' + DateTimeToStr(pCaixa.This.OpenedIn));
+  Memo1.Lines.Add('Total em Caixa de R$' + CurrToStr(pCaixa.This.Total));
+  Memo1.Lines.Add('Fechado em ' + DateTimeToStr(pCaixa.This.ClosedIn));
 end;
 
 end.

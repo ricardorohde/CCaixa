@@ -83,6 +83,7 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_MapFile>3</DCC_MapFile>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -112,7 +113,6 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="Manager.pas"/>
-        <DCCReference Include="Model\Model.DAO.Caixa.pas"/>
         <DCCReference Include="Model\Generic.DAO.pas"/>
         <DCCReference Include="Control\Control.Entidade.pas"/>
         <BuildConfiguration Include="Release">

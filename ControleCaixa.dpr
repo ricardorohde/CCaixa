@@ -9,7 +9,6 @@ uses
   Utils.functions in 'Assets\Utils.functions.pas',
   DM.Main in 'DM.Main.pas' {DTM: TDataModule} ,
   Manager in 'Manager.pas',
-  Model.DAO.Caixa in 'Model\Model.DAO.Caixa.pas',
   Generic.DAO in 'Model\Generic.DAO.pas',
   Control.Entidade in 'Control\Control.Entidade.pas';
 

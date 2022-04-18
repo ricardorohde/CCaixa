@@ -1,0 +1,47 @@
+unit uMain;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.StdCtrls, Manager, DM.Main, Caixa.DTO;
+
+type
+  TFrmMain = class(TForm)
+    Button1: TButton;
+    procedure FormCreate(Sender: TObject);
+  private
+    pManager: TManagerObject;
+    procedure OpenCaixa;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmMain: TFrmMain;
+
+implementation
+
+{$R *.dfm}
+{ TFrmMain }
+
+procedure TFrmMain.FormCreate(Sender: TObject);
+begin
+  ReportMemoryLeaksOnShutdown := True;
+  pManager := TManagerObject.New(DTM.Conn);
+end;
+
+procedure TFrmMain.OpenCaixa;
+begin
+
+end;
+
+end.

@@ -13,9 +13,11 @@ type
     FClosedIn: TDateTime;
     FOpenedIn: TDateTime;
     FId: Integer;
+    FTotal: Currency;
     procedure SetClosedIn(const Value: TDateTime);
     procedure SetId(const Value: Integer);
     procedure SetOpenedIn(const Value: TDateTime);
+    procedure SetTotal(const Value: Currency);
   public
     constructor Create;
     destructor Destroy; override;
@@ -23,6 +25,7 @@ type
     property Id: Integer read FId write SetId;
     property OpenedIn: TDateTime read FOpenedIn write SetOpenedIn;
     property ClosedIn: TDateTime read FClosedIn write SetClosedIn;
+    property Total: Currency read FTotal write SetTotal;
   end;
 
   TPRODUTOS = class
@@ -110,6 +113,11 @@ end;
 procedure TCAIXAS.SetOpenedIn(const Value: TDateTime);
 begin
   FOpenedIn := Value;
+end;
+
+procedure TCAIXAS.SetTotal(const Value: Currency);
+begin
+  FTotal := Value;
 end;
 
 { TPEDIDOS }

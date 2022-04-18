@@ -1,0 +1,20 @@
+program ControleCaixa;
+
+uses
+  Vcl.Forms,
+  uMain in 'uMain.pas' {Form1},
+  Model.Entidade.interfaces in 'Model\Model.Entidade.interfaces.pas',
+  Caixa.DTO in 'Entidades\Caixa.DTO.pas',
+  Control.Entidade.interfaces in 'Control\Control.Entidade.interfaces.pas',
+  Utils.functions in 'Assets\Utils.functions.pas',
+  DM.Main in 'DM.Main.pas' {DM: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.

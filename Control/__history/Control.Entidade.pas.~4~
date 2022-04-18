@@ -1,0 +1,61 @@
+unit Control.Entidade;
+
+interface
+
+uses
+  Caixa.DTO,
+  Generic.DAO,
+  Model.Entidade.interfaces,
+  Control.Entidade.interfaces;
+
+type
+  TControlEntidades = class(TInterfacedObject, iControlEntidade)
+  private
+    FCaixa: iModelEntidade<TCAIXAS>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function Caixa: iModelEntidade<TCAIXAS>;
+    function Produto: iModelEntidade<TPRODUTOS>;
+    function Pedidos: iModelEntidade<TPEDIDOS>;
+    function ItensPedido: iModelEntidade<TITENSPEDIDOS>;
+  end;
+
+implementation
+
+{ TControlEntidades }
+
+function TControlEntidades.Caixa: iModelEntidade<TCAIXAS>;
+begin
+  if not Assigned(FCaixa) then
+    FCaixa := TGenericDAO<TCAIXAS>.New();
+  result := FCaixa;
+end;
+
+constructor TControlEntidades.Create;
+begin
+
+end;
+
+destructor TControlEntidades.Destroy;
+begin
+
+  inherited;
+end;
+
+function TControlEntidades.ItensPedido: iModelEntidade<TITENSPEDIDOS>;
+begin
+
+end;
+
+function TControlEntidades.Pedidos: iModelEntidade<TPEDIDOS>;
+begin
+
+end;
+
+function TControlEntidades.Produto: iModelEntidade<TPRODUTOS>;
+begin
+
+end;
+
+end.

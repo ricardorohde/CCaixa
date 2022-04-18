@@ -1,0 +1,70 @@
+unit Generic.DAO;
+
+interface
+
+uses Model.Entidade.interfaces;
+
+type
+  TGenericDAO<T: class> = class(TInterfacedObject, iModelEntidade<T>)
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iModelEntidade<T>;
+    function Insert: iModelEntidade<T>;
+    function Update: iModelEntidade<T>;
+    function Delete: iModelEntidade<T>;
+    function Get: iModelEntidade<T>;
+    procedure List(Sender: TObject);
+    function This(id: String = ''): T;
+  end;
+
+implementation
+
+{ TGenericDAO<T> }
+
+constructor TGenericDAO<T>.Create;
+begin
+
+end;
+
+function TGenericDAO<T>.Delete: iModelEntidade<T>;
+begin
+  //
+end;
+
+destructor TGenericDAO<T>.Destroy;
+begin
+
+  inherited;
+end;
+
+function TGenericDAO<T>.Get: iModelEntidade<T>;
+begin
+  //
+end;
+
+function TGenericDAO<T>.Insert: iModelEntidade<T>;
+begin
+  //
+end;
+
+procedure TGenericDAO<T>.List(Sender: TObject);
+begin
+  //
+end;
+
+class function TGenericDAO<T>.New: iModelEntidade<T>;
+begin
+  Result := Self.Create;
+end;
+
+function TGenericDAO<T>.This(id: String): T;
+begin
+  //
+end;
+
+function TGenericDAO<T>.Update: iModelEntidade<T>;
+begin
+  //
+end;
+
+end.

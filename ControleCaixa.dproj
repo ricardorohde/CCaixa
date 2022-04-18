@@ -102,6 +102,19 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Model\Model.Entidade.interfaces.pas"/>
+        <DCCReference Include="Entidades\Caixa.DTO.pas"/>
+        <DCCReference Include="Control\Control.Entidade.interfaces.pas"/>
+        <DCCReference Include="Assets\Utils.functions.pas"/>
+        <DCCReference Include="DM.Main.pas">
+            <Form>DTM</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Manager.pas"/>
+        <DCCReference Include="Model\Model.DAO.Caixa.pas"/>
+        <DCCReference Include="Model\Generic.DAO.pas"/>
+        <DCCReference Include="Control\Control.Entidade.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
